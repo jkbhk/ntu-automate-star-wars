@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 import sys
-
+import getpass
 
 
 options = Options()
@@ -25,6 +25,9 @@ def init():
             if line != "\n":
                 (k, val) = line.split("=", 1)
                 key[k.strip()] = val.strip()
+                
+    key['USERNAME'] = input('Username: ')
+    key['PASSWORD'] = getpass.getpass()
 
 def clicker():
     try:
@@ -45,6 +48,7 @@ def clicker():
             WebDriverWait(driver, TIMEOUT).until(element_present)
 
             registration_open = False
+            attempts = 1
             while not registration_open:
                 driver.find_element_by_xpath("//input[@type='submit' and @value='Add (Register) Selected Course(s)']").click()
                 try: 
@@ -52,7 +56,12 @@ def clicker():
                     if not alert.text.find('not allowed to register'):
                         registration_open = False
                     else: 
-                        registration_open = True
+                        if alert.text.find('not allowed to register'):
+                            print("REGISTRATION NOT OPEN YET, attempt: ",attempts)
+                            attempts+=1
+                            registration_open = False
+                        else:
+                            registration_open = True
                     alert.accept()
                 except:
                     registration_open = True
