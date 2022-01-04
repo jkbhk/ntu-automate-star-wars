@@ -12,7 +12,7 @@ It will stop running only when all the courses have been registered (There are n
 ## prerequisites
 * python
 * pip
-* **MUST DO:** Kake sure all the cores or ger core or major pe that you need are **saved to plan 1 as default**. Try to remove UEs (Those need to choose ranks) 
+* **MUST DO:** Make sure all the cores or ger core or major pe that you need are **saved to plan 1 as default**. Try to remove UEs (Those need to choose ranks) 
 
 ## set up & run
 1. Clone or Fork or download this github
