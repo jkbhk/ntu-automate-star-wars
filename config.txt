@@ -1,1 +1,1 @@
-DRIVE = C:/Users/seoyo/Downloads/chromedriver.exe
+DRIVE = PATH_TO_CHROMEDRIVER.EXE
