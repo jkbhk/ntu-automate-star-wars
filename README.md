@@ -19,6 +19,7 @@ It will stop running only when all the courses have been registered (There are n
 2. Go to chrome settings and go to about chrome. Check chrome version
 3. Go [here](https://chromedriver.chromium.org/downloads) and download chrome driver with correct version
 4. Unzip the downloaded chromedriver and copy the directory it is saved in
+5. Paste the full directory path to the DRIVE field in config.txt
 
 ## Run 
 There are 2 ways to run. 
